@@ -1,5 +1,15 @@
-namespace: krampoline
-resources:
-  - deployment.yaml
-  - service.yaml
-  - ingress.yaml
+apiVersion: apps/v1
+kind: Deployment
+spec:
+    template:
+        metadata:
+            labels:
+                app: frontend
+        spec:
+            containers:
+                - name: frontend
+                  # 여러분의 image 주소를 입력해주세요.
+                  image: krmp-d2hub-idock.9rum.cc/dev-test/repo_4c230b5d5bd4
+                  imagePullPolicy: Always
+                  ports:
+                      - containerPort: 8080
