@@ -1,15 +1,14 @@
-import { Route, BrowserRouter, Routes } from 'react-router-dom'
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 
-import Main from './Main';
+import Main from "./Main";
+import Router from "./Router";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Main />} />
-      </Routes>
-    </BrowserRouter>
-  )
+    <>
+      <Router />
+    </>
+  );
 }
 
-export default App
+export default App;
