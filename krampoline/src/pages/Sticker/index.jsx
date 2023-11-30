@@ -6,6 +6,7 @@ import Namwon from "./Namwon.jsx";
 const StickerPage = () => {
   const location = useLocation();
   const page = location.state.page;
+  // const page = 2;
 
   if (page === 2) {
     return <JejuCity />;

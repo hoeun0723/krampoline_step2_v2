@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 
 import { placeList } from "./placeList.js";
 import { useState } from "react";
+import List from "../../components/List/index.jsx";
+import ListModal from "../Main/List.jsx";
 
 /**
  * 제주시
@@ -15,7 +17,7 @@ import { useState } from "react";
 
 const JejuCity = () => {
   const location = useLocation();
-  const page = location.state.page;
+  // const page = location.state.page;
 
   // get image url
 
@@ -35,13 +37,13 @@ const JejuCity = () => {
   return (
     <MainWrapper>
       <TitleWrapper>
-        <p>{placeList[page].name}</p>
+        <p>{placeList[2].name}</p>
       </TitleWrapper>
       <MapWrapper>
         {/* 지도 */}
         <img
-          src={placeList[page].imgUrl}
-          alt={placeList[page].name}
+          src={placeList[2].imgUrl}
+          alt={placeList[2].name}
           className="map"
         />
         {/* 스티커 */}
@@ -79,6 +81,7 @@ const JejuCity = () => {
           />
         )}
       </MapWrapper>
+      <ListModal />
     </MainWrapper>
   );
 };

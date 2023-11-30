@@ -8,6 +8,8 @@ const Namwon = () => {
   const location = useLocation();
   const page = location.state.page;
 
+  console.log(page);
+
   return (
     <MainWrapper>
       <TitleWrapper>

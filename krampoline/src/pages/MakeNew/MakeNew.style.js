@@ -6,13 +6,6 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  padding: 0 3.1rem;
-`;
-
-export const Img = styled.img`
-  display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 export const ButtonContainer = styled.div`

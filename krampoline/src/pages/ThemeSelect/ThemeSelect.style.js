@@ -3,26 +3,41 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+`;
+
+export const SubContainer = styled.div`
+  display: flex;
   align-items: center;
+  flex-direction: column;
 `;
 
 export const Text = styled.p`
   display: flex;
-  width: 100%;
-  padding: 1rem;
+  color: #343434;
+  width: 80vw;
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 2.5rem 2.7rem;
 `;
 
-export const DateContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+export const ThemeText = styled.p`
+  color: #343434;
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 3rem 3rem 0 3rem;
 `;
 
 export const ThemeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.4rem;
-  margin: 3rem 0;
+  gap: 1rem;
+  margin: 1rem 3rem 3rem 3rem;
 `;
 
 export const Theme = styled.div`
@@ -30,29 +45,17 @@ export const Theme = styled.div`
   width: 8rem;
   height: 8rem;
   justify-content: center;
-  background-color: gray;
+  border-radius: 10px;
+  border: 1px solid #d4d4d4;
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem;
-`;
-
-export const GNBContainer = styled.div`
-  display: flex;
-  position: fixed;
-  bottom: 0;
-`;
-
-export const CalendarContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  align-items: center;
 `;
 
 export const OneLine = styled.div`
   display: flex;
-  justify-content: space-around;
-  gap: 2.4rem;
+  gap: 1rem;
 `;
