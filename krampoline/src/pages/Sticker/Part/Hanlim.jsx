@@ -70,7 +70,7 @@ const Hanlim = () => {
           />
         )}
       </MapWrapper>
-      <ListModal />
+      <ListModal part={1} />
     </MainWrapper>
   );
 };

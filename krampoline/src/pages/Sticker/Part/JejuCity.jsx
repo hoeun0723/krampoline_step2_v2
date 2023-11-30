@@ -142,7 +142,7 @@ const JejuCity = () => {
           />
         )}
       </MapWrapper>
-      <ListModal />
+      <ListModal part={2} />
     </MainWrapper>
   );
 };

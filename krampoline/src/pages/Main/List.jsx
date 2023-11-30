@@ -2,12 +2,18 @@ import styled from "styled-components";
 import List from "../../components/List";
 import { motion } from "framer-motion";
 import { useRef, useState } from "react";
+import jejuData from "../../data/jejuData";
 
-const ListModal = () => {
-  const placeList = [
-    ["도두봉", "어쩌고저쩌고", "제주 서귀포시 1100로 1555"],
-    ["동문시장", "어쩌고저쩌고", "제주 서귀포시 남원읍 생기악로 53-38"],
-  ];
+const ListModal = ({ part }) => {
+  // const placeList = [
+  //   ["도두봉", "어쩌고저쩌고", "제주 서귀포시 1100로 1555"],
+  //   ["동문시장", "어쩌고저쩌고", "제주 서귀포시 남원읍 생기악로 53-38"],
+  // ];
+
+  let placeList = [];
+  for (const key in jejuData[part]) {
+    placeList.push(jejuData[part][key]);
+  }
 
   return (
     <MainWrapper>
@@ -21,7 +27,9 @@ const ListModal = () => {
       </div>
       <ListWrapper>
         {placeList.map((data) => {
-          return <List place={data[0]} desc={data[1]} address={data[2]} />;
+          return (
+            <List place={data.name} desc={data.info} address={data.address} />
+          );
         })}
       </ListWrapper>
     </MainWrapper>

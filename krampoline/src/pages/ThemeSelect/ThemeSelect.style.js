@@ -21,6 +21,7 @@ export const Text = styled.p`
   font-weight: 700;
   line-height: normal;
   margin: 2.5rem 2.7rem;
+  margin-top: 3.5rem;
 `;
 
 export const ThemeText = styled.p`
@@ -40,8 +41,34 @@ export const ThemeContainer = styled.div`
   margin: 1rem 3rem 3rem 3rem;
 `;
 
+export const Img = styled.img`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  ${({ customStyle }) => customStyle}
+`;
+
+export const ThemeInnerText = styled.p`
+  display: flex;
+  position: absolute;
+  margin-top: -4rem;
+
+  color: #000;
+
+  text-align: center;
+  font-family: GangwonEduAll OTF;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+`;
+
 export const Theme = styled.button`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 8rem;
   height: 8rem;
   justify-content: center;

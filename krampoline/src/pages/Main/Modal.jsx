@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Button from "../../components/Button";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import jejuData from "../../data/jejuData";
 
 const Modal = ({ part }) => {
   const navigate = useNavigate();
@@ -10,7 +11,11 @@ const Modal = ({ part }) => {
     navigate("/sticker", { state: { page: part } });
   };
 
-  console.log(part);
+  let dataList = [];
+  for (const key in jejuData[part]) {
+    dataList.push(jejuData[part][key]);
+  }
+
   const [active, setActive] = useState(true);
   useEffect(() => {
     if (part !== 0) {
@@ -22,12 +27,18 @@ const Modal = ({ part }) => {
       <div className="title-box">
         <p>지역을 선택하고 스탬프를 생성해주세요</p>
       </div>
-      <div className="list-box">
-        <li className="text-green">
-          <span className="text-green">1100고지 &nbsp;&nbsp;&nbsp;</span>
-          <span className="text-gray">제주도 최고의 눈꽃명소</span>
-        </li>
-      </div>
+      {dataList.map((data) => {
+        return (
+          <div className="list-box">
+            {/* <li className="text-green"> */}
+            <div className="flex-row">
+              <span className="text-green">• {data.name}</span>
+              <span className="text-gray">{data.info}</span>
+            </div>
+            {/* </li> */}
+          </div>
+        );
+      })}
       <ButtonWrapper>
         <Button
           children={"지역 선택하기"}
@@ -72,6 +83,7 @@ const MainWrapper = styled.div`
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    width: 30vw;
   }
   .text-gray {
     color: #b6b6b6;
@@ -83,6 +95,11 @@ const MainWrapper = styled.div`
   }
   .list-box {
     margin: 1.44rem 2.25rem;
+  }
+  .flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: spac;
   }
 `;
 

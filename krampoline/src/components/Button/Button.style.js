@@ -19,4 +19,9 @@ export const Container = styled.button`
   line-height: normal;
 
   ${({ customStyle }) => customStyle}
+
+  &:disabled {
+    cursor: default;
+    background-color: #bfdad3;
+  }
 `;
