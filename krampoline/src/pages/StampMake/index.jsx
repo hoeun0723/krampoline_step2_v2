@@ -24,7 +24,7 @@ const StampMake = () => {
   const [imgUrl, setImgUrl] = useState("");
 
   const openai = new OpenAI({
-    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    apiKey: "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",
     dangerouslyAllowBrowser: true,
   });
 
