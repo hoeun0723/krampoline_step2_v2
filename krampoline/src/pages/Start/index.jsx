@@ -23,6 +23,9 @@ const Start = () => {
     console.log(response);
     navigate("/make-new");
   };
+
+  const canActiveNextButton = Boolean(!username);
+
   return (
     <S.Container>
       <S.Img />
@@ -32,7 +35,9 @@ const Start = () => {
           value={username}
           onChange={handleInput}
         />
-        <Button onClick={handleButton}>시작하기</Button>
+        <Button onClick={handleButton} disabled={canActiveNextButton}>
+          시작하기
+        </Button>
       </S.ButtonContainer>
     </S.Container>
   );

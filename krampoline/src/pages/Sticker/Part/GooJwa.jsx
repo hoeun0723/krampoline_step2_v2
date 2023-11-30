@@ -85,7 +85,7 @@ const GooJwa = () => {
           />
         )}
       </MapWrapper>
-      <ListModal />
+      <ListModal part={3} />
     </MainWrapper>
   );
 };

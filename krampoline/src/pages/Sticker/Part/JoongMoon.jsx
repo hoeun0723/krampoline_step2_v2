@@ -70,7 +70,7 @@ const JoongMoon = () => {
           />
         )}
       </MapWrapper>
-      <ListModal />
+      <ListModal part={5} />
     </MainWrapper>
   );
 };

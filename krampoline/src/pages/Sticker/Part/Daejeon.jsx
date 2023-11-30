@@ -85,7 +85,7 @@ const Daejeon = () => {
           />
         )}
       </MapWrapper>
-      <ListModal />
+      <ListModal part={6} />
     </MainWrapper>
   );
 };

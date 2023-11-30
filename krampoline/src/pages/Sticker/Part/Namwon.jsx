@@ -85,7 +85,7 @@ const Namwon = () => {
           />
         )}
       </MapWrapper>
-      <ListModal />
+      <ListModal part={4} />
     </MainWrapper>
   );
 };

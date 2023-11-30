@@ -8,17 +8,23 @@ import { useNavigate, useLocation } from "react-router";
 
 // ai api
 import OpenAI from "openai";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import jejuData from "../../data/jejuData";
+
+// image download
+import html2canvas from "html2canvas";
+import saveAs from "file-saver";
 
 const StampMake = () => {
   const location = useLocation();
 
   // input
-  const [part, setPart] = useState(2);
+  // const [part, setPart] = useState(location.state.part);
   const [place, setPlace] = useState(location.state.place);
   const [desc, setDesc] = useState("");
+  // const part = jejuData[]
 
   // ai
   const [imgUrl, setImgUrl] = useState("");
@@ -78,9 +84,58 @@ const StampMake = () => {
   // navigate
   const navigate = useNavigate();
   const moveToMap = () => {
+    const part1 = ["탐나는 농장", "새별오름"];
+    const part2 = ["동문시장", "도두봉"];
+    const part3 = ["함덕서우봉", "에코랜드테마파크", "사려니숲길"];
+    const part4 = ["유채꽃프라자", "동백포레스트", "휴애리자연생활공원"];
+    const part5 = ["1100고지", "소천지"];
+    const part6 = [
+      "바이나흐튼 크리스마스박물관",
+      "카멜리아힐",
+      "산방산탄산온천",
+    ];
+
+    let part = 0;
+    if (part1.includes(place)) {
+      part = 1;
+    } else if (part2.includes(place)) {
+      part = 2;
+    } else if (part3.includes(place)) {
+      part = 3;
+    } else if (part4.includes(place)) {
+      part = 4;
+    } else if (part5.includes(place)) {
+      part = 5;
+    } else if (part6.includes(place)) {
+      part = 6;
+    }
+
     navigate("/sticker", {
       state: { page: part, imgUrl: imgUrl, placeName: place, desc: desc },
     });
+  };
+
+  // download image
+  const divRef = useRef(null);
+
+  const handleDownload = async () => {
+    if (!divRef.current) return;
+    console.log(divRef.current);
+    console.log("d", divRef.current.src);
+
+    if (imgUrl.length > 0) {
+      try {
+        const div = divRef.current;
+        const canvas = await html2canvas(div, { scale: 2 });
+        canvas.toBlob((blob) => {
+          if (blob !== null) {
+            saveAs(blob, "result.png");
+          }
+        });
+      } catch (error) {
+        console.error("Error converting div to image:", error);
+      }
+    }
   };
 
   // return
@@ -157,7 +212,13 @@ const StampMake = () => {
         {/* <S.AIContainer> */}
         <ImageWrapper>
           <center>
-            <img className="img" src={imgUrl} alt="img" />
+            <img
+              className="img"
+              src={imgUrl}
+              alt="img"
+              ref={divRef}
+              id="image"
+            />
           </center>
         </ImageWrapper>
         {/* </S.AIContainer> */}
@@ -177,11 +238,13 @@ const StampMake = () => {
           </S.InputContainer>
         </S.InputWhole>
         <S.ButtonContainer>
-          {imgUrl.length ? (
-            <Button onClick={moveToMap}>지도에 스탬프 추가하기</Button>
-          ) : (
-            <Button onClick={callDALLE}>스탬프 추가하기</Button>
-          )}
+          {/* {imgUrl.length ? ( */}
+          <Button onClick={moveToMap}>지도에 스탬프 추가하기</Button>
+          <Button onClick={handleDownload}>이미지 공유하기</Button>
+
+          {/* ) : ( */}
+          {/* <Button onClick={callDALLE}>스탬프 추가하기</Button> */}
+          {/* )} */}
         </S.ButtonContainer>
         <S.GNBContainer>
           <GlobalNavigation nowPage={2} />

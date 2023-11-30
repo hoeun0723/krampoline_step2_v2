@@ -34,7 +34,7 @@ export const PlaceDiv = styled.div`
 `;
 
 export const TextArea = styled.textarea`
-  height: 7rem;
+  height: 4rem;
   resize: none;
   border-radius: 0.625rem;
   border: 1px solid #6eb5a2;
@@ -62,6 +62,7 @@ export const ButtonContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 2rem;
+  gap: 1rem;
 `;
 
 export const AIContainer = styled.div`
