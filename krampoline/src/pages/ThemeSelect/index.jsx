@@ -11,15 +11,12 @@ const ThemeSelect = () => {
   };
   return (
     <S.Container>
-      <S.CalendarContainer>
-        <S.Text>가는 날짜</S.Text>
-        <Calendar />
-      </S.CalendarContainer>
-      <S.CalendarContainer>
-        <S.Text>오는 날짜</S.Text>
-        <Calendar />
-      </S.CalendarContainer>
-      <S.Text>방문하시는 계절을 선택해주세요!</S.Text>
+      <S.Text>제주에 방문하는 날짜를 설정해주세요!</S.Text>
+      <S.SubContainer>
+        <Calendar placeholder="가는 날짜를 선택하세요" title="가는 날짜" />
+        <Calendar placeholder="오는 날짜를 선택하세요" title="오는 날짜" />
+      </S.SubContainer>
+      <S.ThemeText>방문하는 계절을 선택하세요!</S.ThemeText>
       <S.ThemeContainer>
         <S.OneLine>
           <S.Theme>봄</S.Theme>
@@ -33,9 +30,6 @@ const ThemeSelect = () => {
       <S.ButtonContainer>
         <Button onClick={handleButton}>입력 완료!</Button>
       </S.ButtonContainer>
-      <S.GNBContainer>
-        <GlobalNavigation nowPage={1} />
-      </S.GNBContainer>
     </S.Container>
   );
 };

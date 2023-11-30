@@ -19,9 +19,9 @@ export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   position: fixed;
-  bottom: 8rem;
+  bottom: 7rem;
   width: 100vw;
 
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 1rem;
 `;

@@ -7,17 +7,16 @@ export const Container = styled.button`
   width: 80vw;
   height: 2.5rem;
 
-  border-radius: 0.625rem;
-  background-color: #70a597;
-  color: white;
-`;
-
-export const Text = styled.p`
+  border-radius: 10px;
+  background-color: #6eb5a2;
   color: #fff;
+
   text-align: center;
   font-family: Pretendard;
-  font-size: 0.875rem;
+  font-size: 12px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+
+  ${({ customStyle }) => customStyle}
 `;

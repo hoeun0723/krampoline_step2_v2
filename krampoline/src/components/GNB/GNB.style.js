@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100vw;
-  border: 1px solid;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.15);
 `;
 
 const getButtonColor = (nowPage) => (nowPage ? "black" : "#CECECE");
