@@ -13,5 +13,16 @@ spec:
     spec:
       containers:
         - name: frontend
-          # 여러분의 image 주소를 입력해주세요.
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_4d6a485d4cf3
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_1c543803f298
+          env:
+          - name: REACT_APP_OPENAI_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: react-secrets
+                key: REACT_APP_OPENAI_API_KEY
+
+          - name: REACT_APP_BASE_URL
+            valueFrom:
+              secretKeyRef:
+                name: react-secrets
+                key: REACT_APP_BASE_URL
