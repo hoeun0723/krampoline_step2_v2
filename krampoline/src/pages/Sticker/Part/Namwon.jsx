@@ -28,7 +28,7 @@ const Namwon = () => {
     if (placeName === "동백포레스트") {
       setUrl3(imgUrl);
     }
-  }, [imgUrl, placeName]);
+  }, []);
 
   // control animation
   const transition = {
