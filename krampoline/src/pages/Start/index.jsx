@@ -12,10 +12,13 @@ const Start = () => {
     setUsername(e.target.value);
   };
   const handleButton = async () => {
-    const API_URL = process.env.REACT_APP_BASE_URL;
-    const response = await axios.post(`${API_URL}/api/users`, {
-      username: username,
-    });
+    // const API_URL = process.env.REACT_APP_BASE_URL;
+    const response = await axios.post(
+      `https://kaf2ee4aac1d0a.user-app.krampoline.com/api/users`,
+      {
+        username: username,
+      }
+    );
     console.log("클릭");
     console.log(response);
     navigate("/make-new");
