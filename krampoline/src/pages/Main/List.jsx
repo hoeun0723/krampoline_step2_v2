@@ -5,59 +5,14 @@ import { useRef, useState } from "react";
 
 const ListModal = () => {
   const placeList = [
-    ["1100고지", "제주도 최고의 눈꽃명소", "제주 서귀포시 1100로 1555"],
-    [
-      "동백포레스트",
-      "제주도의 만개한 동백꽃 스팟",
-      "제주 서귀포시 남원읍 생기악로 53-38",
-    ],
-    [
-      "소천지",
-      "눈 내린 아름다운 한라산을 볼 수 있는 스팟",
-      "제주 서귀포시 남원읍 생기악로 53-38",
-    ],
+    ["도두봉", "어쩌고저쩌고", "제주 서귀포시 1100로 1555"],
+    ["동문시장", "어쩌고저쩌고", "제주 서귀포시 남원읍 생기악로 53-38"],
   ];
 
-  //   const [startY, setStartY] = useState(0);
-  //   const [drawerTop, setDrawerTop] = useState(70);
-  //   const touchStart = (e) => {
-  //     setStartY(e.touches[0].clientY);
-  //   };
-
-  //   const touchMove = (e) => {
-  //     if (startY !== null) {
-  //       const deltaY = e.touches[0].clientY - startY;
-
-  //       console.log(deltaY, startY);
-
-  //       if (drawerTop > 40) {
-  //         setDrawerTop((prevTop) => Math.max(0, prevTop + deltaY));
-
-  //         setStartY(e.touches[0].clientY);
-  //       }
-  //     }
-  //   };
-
-  //   const touchEnd = () => {
-  //     setStartY(null);
-  //   };
-
   return (
-    <MainWrapper
-    //   style={{
-    //     position: "absolute",
-    //     top: `${drawerTop}vh`,
-    //     height: `${drawerTop}vh`,
-    //     overflow: "hidden",
-    //   }}
-    >
+    <MainWrapper>
       <div>
-        <div
-          className="bar-box"
-          //   onTouchStart={(e) => touchStart(e)}
-          //   onTouchMove={(e) => touchMove(e)}
-          //   onTouchEnd={() => touchEnd()}
-        >
+        <div className="bar-box">
           <img src="/assets/images/black-bar.png" className="bar" alt="bar" />
         </div>
         <div className="title-box">

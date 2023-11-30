@@ -40,13 +40,18 @@ export const ThemeContainer = styled.div`
   margin: 1rem 3rem 3rem 3rem;
 `;
 
-export const Theme = styled.div`
+export const Theme = styled.button`
   display: flex;
   width: 8rem;
   height: 8rem;
   justify-content: center;
   border-radius: 10px;
   border: 1px solid #d4d4d4;
+  background-color: #fff;
+
+  &:active {
+    border: 3px solid #70a597;
+  }
 `;
 
 export const ButtonContainer = styled.div`
