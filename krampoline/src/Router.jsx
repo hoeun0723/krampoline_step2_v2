@@ -13,7 +13,7 @@ const Router = () => {
         <Route path="/" element={<Start />} />
         <Route path="/theme-select" element={<ThemeSelect />} />
         <Route path="/test" element={<Main />} />
-        <Route path="/sticker" element={<StickerPage />} />
+        {/* <Route path="/sticker" element={<StickerPage />} /> */}
         <Route path="/stamp-make" element={<StampMake />} />
       </Routes>
     </BrowserRouter>
