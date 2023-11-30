@@ -1,8 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const List = ({ place, desc, address }) => {
+  const navigate = useNavigate();
+
+  const moveToMakeStamp = () => {
+    console.log(place);
+    navigate("/stamp-make", { state: { place: place } });
+  };
   return (
-    <MainWrapper>
+    <MainWrapper onClick={moveToMakeStamp}>
       <div className="flex-row">
         <p className="place">{place}</p>
         <p className="desc">{desc}</p>

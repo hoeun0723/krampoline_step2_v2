@@ -8,7 +8,7 @@ export const DateInput = styled(ReactDatePicker)`
   border: 1px solid #d4d4d4;
   width: 80vw;
 
-  color: #bbb;
+  color: #70a597;
 
   font-family: Pretendard;
   font-size: 12px;
