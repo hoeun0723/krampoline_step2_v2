@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_15ed97699ff7
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_1c543803f298
           env:
           - name: REACT_APP_OPENAI_API_KEY
             valueFrom:
