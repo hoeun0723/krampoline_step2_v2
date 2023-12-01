@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import List from "../../../components/List/index.jsx";
 import ListModal from "../../Main/List.jsx";
 
+import * as S from "./Part.style.js";
+
 import {
   Popover,
   PopoverTrigger,
@@ -18,6 +20,7 @@ import {
   PopoverCloseButton,
   PopoverAnchor,
 } from "@chakra-ui/react";
+import GlobalNavigation from "../../../components/GNB/index.jsx";
 
 const JejuCity = () => {
   const location = useLocation();

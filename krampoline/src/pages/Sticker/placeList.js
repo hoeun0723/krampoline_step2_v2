@@ -20,7 +20,7 @@ export const placeList = {
     imgUrl: "/assets/images/jeju-5-detail.png",
   },
   6: {
-    name: "대정 안덕",
+    name: "대전 안덕",
     imgUrl: "/assets/images/jeju-6-detail.png",
   },
 };

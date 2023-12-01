@@ -6,6 +6,9 @@ const GlobalStyle = createGlobalStyle`
     ${reset}
 
     
+
+
+line-height: normal;
     
 
     *{

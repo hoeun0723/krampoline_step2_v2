@@ -15,14 +15,14 @@ spec:
         - name: frontend
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_346149c19662
           env:
-          - name: REACT_APP_OPENAI_API_KEY
-            valueFrom:
-              secretKeyRef:
-                name: react-secrets
-                key: REACT_APP_OPENAI_API_KEY
+            - name: REACT_APP_OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: react-secrets
+                  key: REACT_APP_OPENAI_API_KEY
 
-          - name: REACT_APP_BASE_URL
-            valueFrom:
-              secretKeyRef:
-                name: react-secrets
-                key: REACT_APP_BASE_URL
+            - name: REACT_APP_BASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: react-secrets
+                  key: REACT_APP_BASE_URL

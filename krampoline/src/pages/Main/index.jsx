@@ -5,6 +5,8 @@ import Button from "../../components/Button";
 import Tooltip from "./Tooltip";
 import ListModal from "./List";
 import Modal from "./Modal";
+import GlobalNavigation from "../../components/GNB";
+import * as S from "./Main.style";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -133,6 +135,9 @@ const Main = () => {
       </MapWrapper>
 
       <Modal part={part} />
+      <S.GNBContainer>
+        <GlobalNavigation nowPage={2} />
+      </S.GNBContainer>
     </MainWrapper>
   );
 };

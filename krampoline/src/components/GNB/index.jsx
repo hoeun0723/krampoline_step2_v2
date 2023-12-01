@@ -1,10 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import * as S from "./GNB.style";
 
 const GlobalNavigation = ({ nowPage }) => {
+  const navigate = useNavigate();
   return (
     <S.Container>
       <S.ButtonContainer $nowPage={nowPage === 1}>
-        <img src="/assets/icon/home-off.svg" alt="home" />
+        <img
+          src="/assets/icon/home-off.svg"
+          alt="home"
+          onClick={() => navigate("/test")}
+        />
       </S.ButtonContainer>
 
       <S.ButtonContainer $nowPage={nowPage === 2}>

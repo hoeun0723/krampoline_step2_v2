@@ -98,8 +98,9 @@ const MainWrapper = styled.div`
   }
   .flex-row {
     display: flex;
-    flex-direction: row;
-    justify-content: spac;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* justify-content: spac; */
   }
 `;
 
