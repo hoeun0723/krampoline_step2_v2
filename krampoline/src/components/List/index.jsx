@@ -3,13 +3,15 @@ import styled from "styled-components";
 
 const List = ({ place, desc, address }) => {
   const navigate = useNavigate();
-
-  const moveToMakeStamp = () => {
-    console.log(place);
-    navigate("/stamp-make", { state: { place: place } });
+  const moveTo = () => {
+    navigate("/stamp-make", {
+      state: {
+        place: place,
+      },
+    });
   };
   return (
-    <MainWrapper onClick={moveToMakeStamp}>
+    <MainWrapper onClick={moveTo}>
       <div className="flex-row">
         <p className="place">{place}</p>
         <p className="desc">{desc}</p>

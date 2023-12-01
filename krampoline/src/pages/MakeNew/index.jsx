@@ -9,14 +9,15 @@ const MakeNew = () => {
   };
   return (
     <S.Container>
+      <S.Img src="/assets/images/logo.png" />
       <S.ButtonContainer>
-        <Button
+        {/* <Button
           customStyle={
             "background-color:white; border: 1px solid #6EB5A2; color:#6EB5A2;"
           }
         >
           기존 정보 불러오기
-        </Button>
+        </Button> */}
         <Button onClick={handleButton}>새로 만들기</Button>
       </S.ButtonContainer>
     </S.Container>

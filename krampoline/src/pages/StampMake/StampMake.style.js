@@ -17,7 +17,7 @@ export const InputText = styled.p`
 export const PlaceDiv = styled.div`
   border-radius: 0.625rem;
   border: 1px solid #6eb5a2;
-  width: 20rem;
+  /* width: 20rem; */
   height: 2.5rem;
 
   display: flex;
@@ -56,6 +56,7 @@ export const InputContainer = styled.div`
 export const InputWhole = styled.div`
   display: flex;
   flex-direction: column;
+  width: 80vw;
 `;
 
 export const ButtonContainer = styled.div`
@@ -72,7 +73,7 @@ export const AIContainer = styled.div`
 
   margin-top: 3rem;
   padding: 2rem;
-  width: 100vw;
+  width: 80vw;
   .img {
     width: 50vw;
     border-radius: 50%;

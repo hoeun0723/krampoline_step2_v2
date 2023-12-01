@@ -6,6 +6,10 @@ import { placeList } from "../placeList.js";
 import { useEffect, useState } from "react";
 import List from "../../../components/List/index.jsx";
 import ListModal from "../../Main/List.jsx";
+import GlobalNavigation from "../../../components/GNB/index.jsx";
+import * as S from "./Part.style.js";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { Img1State, Img2State } from "../../../recoil/atom.js";
 
 const Namwon = () => {
   const location = useLocation();
@@ -13,8 +17,10 @@ const Namwon = () => {
   const placeName = location.state.placeName;
 
   // image url
-  const [url1, setUrl1] = useState("");
-  const [url2, setUrl2] = useState("");
+  const [url1, setUrl1] = useRecoilState(Img1State);
+  const [url2, setUrl2] = useRecoilState(Img2State);
+  const img1 = useRecoilValue(Img1State);
+  const img2 = useRecoilValue(Img2State);
   const [url3, setUrl3] = useState("");
 
   useEffect(() => {

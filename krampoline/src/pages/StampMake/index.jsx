@@ -30,7 +30,8 @@ const StampMake = () => {
   const [imgUrl, setImgUrl] = useState("");
 
   const openai = new OpenAI({
-    apiKey: "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",
+    // apiKey: "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",
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
     dangerouslyAllowBrowser: true,
   });
 
@@ -38,15 +39,15 @@ const StampMake = () => {
     const image = await openai.images.generate({
       model: "dall-e-3",
       // prompt: "A cute baby sea otter",
-      // prompt: `${desc} 심플한 일러스트 형식 스탬프 이미지로 부탁해.`,
-      prompt: `당신은 유명 관광지의 스탬프를 디자인하는 디자이너입니다. 
-      주로 심플한 모양의 디자인을 하는 것으로 유명합니다. 
-      다음과 같은 조건으로 한국의 제주도에서 사용할 스탬프를 제작해주세요. 
-      제주도를 대표하는 의미로 스탬프에는 돌하르방을 넣어주세요. 
-      돌하르방은 변형되지 않은 형태로 보여져야 합니다. 
-      다만 어떠한 문자나 글자도 넣지 말아주세요. 스탬프 주제: ${desc}
-      스탬프 모양: [원형]
-      스탬프 배경색: [흰색]`,
+      prompt: `${desc} 심플한 일러스트 형식 스탬프 이미지로 부탁해.`,
+      // prompt: `당신은 유명 관광지의 스탬프를 디자인하는 디자이너입니다.
+      // 주로 심플한 모양의 디자인을 하는 것으로 유명합니다.
+      // 다음과 같은 조건으로 한국의 제주도에서 사용할 스탬프를 제작해주세요.
+      // 제주도를 대표하는 의미로 스탬프에는 돌하르방을 넣어주세요.
+      // 돌하르방은 변형되지 않은 형태로 보여져야 합니다.
+      // 다만 어떠한 문자나 글자도 넣지 말아주세요. 스탬프 주제: [노란]
+      // 스탬프 모양: [원형]
+      // 스탬프 배경색: [흰색]`,
     });
     //제주도 성산일출봉에 다녀왔다. 추웠지만 노을이 예뻤다.
     setImgUrl(image.data[0].url);
@@ -261,12 +262,13 @@ const ImageWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  margin-top: 6rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   padding: 2rem;
   width: 100vw;
   .img {
-    width: 50vw;
+    width: 15.625rem;
+    height: 15.625rem;
     border-radius: 50%;
   }
   .text {

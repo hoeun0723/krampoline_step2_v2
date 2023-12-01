@@ -37,7 +37,7 @@ export const ThemeText = styled.p`
 export const ThemeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   margin: 1rem 3rem 3rem 3rem;
 `;
 
@@ -45,8 +45,9 @@ export const Img = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 4rem;
-  ${({ customStyle }) => customStyle}
+  width: 8rem;
+  height: 8rem;
+  /* ${({ customStyle }) => customStyle} */
 `;
 
 export const ThemeInnerText = styled.p`
